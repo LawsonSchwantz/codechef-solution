@@ -1,26 +1,20 @@
-#include<stdio.h>
-   
-int arr[1000000]={0};
+#include <stdio.h>
 
-     
 int main()
 {
-    int a,n;
-    scanf("%d",&n);
-    while(n--)
+    int t;
+    scanf("%d",&t);
+    while(t--)
     {
-        scanf("%d",&a);
-        arr[a]++;
+      long int n, reverse=0, rem;
+      scanf("%ld", &n);
+      while(n!=0)
+      {
+         rem=n%10;
+         reverse=reverse*10+rem;
+         n/=10;
+      }
+      printf("%d\n",reverse);
     }
-    a=0;
-    while(a<1000000)
-    {
-        while(arr[a])
-        {
-            printf("%d\n",a);
-            arr[a]--;
-        }
-    a++;
-    }
-return 0;
+    return 0;
 }
